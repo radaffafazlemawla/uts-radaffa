@@ -1,0 +1,10 @@
+class KonverterJarak:
+    def __init__(self, mil):
+        self.mil = mil
+
+    def konversi_ke_kilometer(self):
+        kilometer = self.mil * 1.60934
+        print(f"{self.mil} mil = {kilometer:.2f} kilometer")
+mil = float(input("Masukkan jarak dalam mil: "))
+konversi = KonverterJarak(mil)
+konversi.konversi_ke_kilometer
