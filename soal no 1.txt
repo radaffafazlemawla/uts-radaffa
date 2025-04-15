@@ -7,4 +7,4 @@ class KonverterJarak:
         print(f"{self.mil} mil = {kilometer:.2f} kilometer")
 mil = float(input("Masukkan jarak dalam mil: "))
 konversi = KonverterJarak(mil)
-konversi.konversi_ke_kilometer
+konversi.konversi_ke_kilometer()
