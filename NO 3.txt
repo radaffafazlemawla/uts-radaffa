@@ -1,0 +1,27 @@
+from abc import ABC, abstractmethod
+class Hewan(ABC):
+    def __init__(self, nama):
+        self.nama = nama
+    def suara(self):
+        pass
+class Kucing(Hewan):
+    def suara(self):
+        print(f"{self.nama} bersuara: tung tung sahur !")
+
+class Anjing(Hewan):
+    def suara(self):
+        print(f"{self.nama} bersuara: asik asik !")
+
+class Ayam(Hewan):
+    def suara(self):
+        print(f"{self.nama} bersuara: cukuruguk !")
+def panggil_suara(hewan):
+    hewan.suara()
+hewan1 = Kucing("caca")
+hewan2 = Anjing("priya")
+hewan3 = Ayam("asep")
+
+daftar_hewan = [hewan1, hewan2, hewan3]
+
+for h in daftar_hewan:
+    panggil_suara(h)
