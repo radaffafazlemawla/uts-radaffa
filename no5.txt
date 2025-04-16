@@ -1,0 +1,32 @@
+class Rekening:
+    def __init__(self, nama, no_rekening, saldo):
+        self.nama = nama
+        self.no_rekening = no_rekening
+        self.saldo = saldo
+    def setor_tunai(self, jumlah):
+        self.saldo += jumlah
+        print(f"{self.nama} melakukan setor tunai sebesar Rp{jumlah:,}")
+    def tarik_tunai(self, jumlah):
+        if self.saldo >= jumlah:
+            self.saldo -= jumlah
+            print(f"{self.nama} melakukan tarik tunai sebesar Rp{jumlah:,}")
+        else:
+            print(f"{self.nama} gagal tarik tunai. Saldo tidak cukup.")
+class Nasabah(Rekening):
+    def tampilkan_data(self):
+        print("===== Data Nasabah =====")
+        print(f"Nama         : {self.nama}")
+        print(f"No Rekening  : {self.no_rekening}")
+        print(f"Saldo        : Rp{self.saldo:,.2f}")
+        print("========================\n")
+nasabah1 = Nasabah("Budi", 5555, 500000)
+nasabah2 = Nasabah("Wati", 6666, 2000000)
+print(">> Sebelum Transaksi:")
+nasabah1.tampilkan_data()
+nasabah2.tampilkan_data()
+print(">> Transaksi Berlangsung:")
+nasabah1.setor_tunai(1000000)    # Budi setor tunai 1 juta
+nasabah2.tarik_tunai(1000000)    # Wati tarik tunai 1 juta
+print("\n>> Setelah Transaksi:")
+nasabah1.tampilkan_data()
+nasabah2.tampilkan_data()
